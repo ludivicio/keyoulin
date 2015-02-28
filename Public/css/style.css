@@ -1,0 +1,176 @@
+body{
+	font-size: 14px;
+	line-height: 22px;
+	height: 100%;
+	font: 12px/100% '微软雅黑', Verdana, Geneva, sans-serif;
+	color: #666;
+	-webkit-font-smoothing: antialiased;
+}
+
+.container {
+	width: 980px;
+}
+
+.clear {
+	clear: both;
+}
+
+.left {
+	text-align: left;
+}
+.center {
+	text-align: center;
+}
+.right {
+	text-align: right;
+}
+
+.header {
+	width: 100%;
+}
+
+
+.wrapper {
+	margin-top: 51px;
+}
+
+
+.flip {
+	/*height: 500px;*/
+	background-color: #0278BB;
+	padding: 0;
+}
+
+.flip .carousel-inner img {
+	margin: auto;
+}
+
+.inner-content {
+	margin-top: 35px;
+}
+
+.left-content {
+	float: left;	
+	padding: 0;
+
+}
+
+/*.left-content .login {
+	margin-top: 30px;
+	padding: 0;
+}*/
+
+.left-content h3 small {
+	color: #2580D5;
+}
+
+.left-content .contact-us {
+	margin-top: 30px;
+}
+
+.left-content .contact-us p {
+	height: 25px;
+	line-height: 25px;
+}
+.left-content .contact-us p span{
+	margin-left: 20px;
+}
+
+.right-content {
+	float: left;
+	border-left: 1px solid #EAEAEA;
+	padding-left: 30px;
+	/*margin-top: 30px;*/
+	/*padding: 30px 15px;*/
+}
+.right-content h3 small {
+	color: #2580D5;
+}
+.right-content .company-profile {
+	margin-top: 30px;
+}
+
+.success-case {
+	margin-top: 30px;
+	padding: 30px 0 50px 0;
+	background-color: #F4F4F4;
+}
+
+.success-case h3 small {
+	color: #2580D5;
+}
+
+.success-case img, .success-case img:hover {
+	border: 1px solid #BDBDBD;
+	cursor: pointer;
+}
+.success-case p {
+	padding: 20px 0 0 0; 
+	font-size: 14px;
+}
+
+/*.case {
+	padding: 20px 0 50px 0;
+	font-size: 35px;
+}*/
+
+.shadow {
+    -moz-box-shadow: 3px 3px 4px #555;
+    -webkit-box-shadow: 3px 3px 4px #555;
+    box-shadow: 3px 3px 4px #555;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#555555)";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#555555');
+}
+
+.block_1 {
+	padding: 20px 0;
+}
+
+.block_2 {
+	border-bottom: 1px solid #CECECE;
+}
+
+.block_3 {
+	padding: 40px 0;
+	border-bottom: 1px solid #CECECE;
+}
+
+.block_4 {
+	padding: 40px 0;
+	border-bottom: 1px solid #CECECE;
+}
+
+.block_5 {
+	padding: 30px 0 40px;
+	background-color: #CBFEC6;
+	border-bottom: 1px solid #CECECE;
+}
+
+.footer {
+	background-color: #474644;
+}
+
+.footer p {
+	color:#FF6501;
+	font-size: 20px;
+	padding: 25px 0 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
