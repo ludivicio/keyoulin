@@ -1,3 +1,8 @@
+
+/* 
+	common css 
+*/
+
 body{
 	font-size: 14px;
 	line-height: 22px;
@@ -32,6 +37,18 @@ body{
 .wrapper {
 	margin-top: 51px;
 }
+
+.footer {
+	background-color: #474644;
+}
+
+.footer p {
+	color:#FF6501;
+	font-size: 20px;
+	padding: 25px 0 15px;
+}
+
+/* main page */
 
 .block_1 {
 	padding: 20px 0;
@@ -81,14 +98,16 @@ body{
 	border-bottom: 1px solid #CECECE;
 }
 
-.footer {
-	background-color: #474644;
+
+/* buy page */
+
+.buy {
+	
+	margin-bottom: 300px;
 }
 
-.footer p {
-	color:#FF6501;
-	font-size: 20px;
-	padding: 25px 0 15px;
+.buy h1 {
+	padding: 100px 0 100px;
 }
 
 
@@ -99,11 +118,7 @@ body{
 
 
 
-
-
-
-
-
+/* product page */
 
 
 
