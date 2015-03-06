@@ -29,7 +29,6 @@ body{
 	color: #000000;
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-	
 	color: #FFFFFF;
 	background-color: #6A9E32;
 }
@@ -99,11 +98,34 @@ body{
 }
 
 
+/* product page */
+
+.block_6 {
+	padding: 80px 0 80px;
+	border-bottom: 1px solid #CECECE;
+}
+
+
+.block_7 {
+	/*padding: 30px 0 40px;*/
+	background-color: #D5EABF;
+	border-bottom: 1px solid #CECECE;
+}
+
+.block_8 {
+	padding: 80px 0 80px;
+	background-color: #EEEEEE;
+	border-bottom: 1px solid #CECECE;
+}
+
+
+
 /* buy page */
 
 .buy {
 	
 	/*margin-bottom: 300px;*/
+	
 }
 
 .buy h1 {
@@ -124,13 +146,3 @@ body{
 .buy .change {
 	vertical-align: middle;
 }
-
-
-
-
-
-
-/* product page */
-
-
-
