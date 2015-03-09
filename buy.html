@@ -32,12 +32,10 @@
 		<div class="navbar navbar-default navbar-static-top">
 		    <div class="container">
 		    	<ul class="nav navbar-nav">
-			  	<li class="active"><a href="index.html">首页</a></li>
-			  	<li><a href="product.html">克优林介绍</a></li>
-			  	<li class="active"><a href="buy.html">在线购买</a></li>
-			  	<!-- <li><a href="#">详情咨询：13261914955</a></li> -->
-			</ul>
-				
+				  	<li><a href="index.html">首页</a></li>
+				  	<li><a href="product.html">克优林介绍</a></li>
+				  	<li class="active"><a href="buy.html">在线购买</a></li>
+				</ul>
 		    </div>
 		</div>
 	</div>
@@ -46,56 +44,58 @@
             			<div class="row">
 				<div class="col-xs-7 buy">
 					<h1 class="text-center">克优林官网订购</h1>
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" method="post" role="form" action="handle.php">
 					  
 						<div class="form-group">
 						    <label class="col-sm-3 control-label"><span class="require">*</span>收货人姓名</label>
 						    <div class="col-sm-6">
-						      <input type="text" class="form-control" id="name" placeholder="收货人姓名">
+						      <input type="text" class="form-control" name="name" placeholder="收货人姓名">
 						    </div>
 						 </div>
 
 						 <div class="form-group">
 						    <label for="phone" class="col-sm-3 control-label"><span class="require">*</span>联系电话</label>
 						    <div class="col-sm-6">
-						      <input type="text" class="form-control" id="phone" placeholder="联系电话">
+						      <input type="text" class="form-control" name="phone" placeholder="联系电话">
 						    </div>
 						 </div>
 
 						 <div class="form-group">
 						    <label for="address" class="col-sm-3 control-label"><span class="require">*</span>详细地址</label>
 						    <div class="col-sm-9">
-						      <input type="text" class="form-control" id="address" placeholder="详细地址">
+						      <input type="text" class="form-control" name="address" placeholder="详细地址">
 						    </div>
 						 </div>
 
 						 <div class="form-group">
 						    <label for="qq" class="col-sm-3 control-label">QQ</label>
 						    <div class="col-sm-6">
-						      <input type="text" class="form-control" id="qq" placeholder="QQ号码">
+						      <input type="text" class="form-control" name="qq" placeholder="QQ号码">
 						    </div>
 						 </div>
 
 						 <div class="form-group">
 						    <label for="message" class="col-sm-3 control-label">留言</label>
 						    <div class="col-sm-9">
-						      <textarea class="form-control" id="message" rows="4" placeholder="说些什么吧..."></textarea>
+						      <textarea class="form-control" name="message" rows="4" placeholder="说些什么吧..."></textarea>
 						    </div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-sm-3 control-label"><span class="require">*</span>验证码</label>
 							<div class="col-sm-3">
-						      	<input type="text" class="form-control" id="captcha" >
+						      	<input type="text" class="form-control" name="code" >
 						    </div>
-						    <div class="col-sm-3">
-						        <label class="control-label">
-						      		<img id="code" src="Public/image/code.png" />
+						    <div class="col-sm-6">
+						        <label class="control-label captcha">
+						        	<img title="点击刷新" src="./captcha.php" align="absbottom" onclick="this.src='captcha.php?'+ Math.random();">
+
+						      		<!-- <img id="code" src="Public/image/code.png" /> -->
 						        </label>
 						    </div>
-						    <div class="col-sm-3">
+						    <!-- <div class="col-sm-3">
 						    	<label class="control-label"><a href="#">看不清楚，换一张</a></label>
-						    </div>
+						    </div> -->
 						    
 						 </div>
 						
@@ -110,13 +110,7 @@
 			</div>
 		</div>	
 	</div>
-
-	<!-- <div class="footer">
-		<div class="container">
-		    <div class="row">
-				<p class="text-center">24小时服务热线：13261914955</p>
-			</div>
-		</div>
-	</div> -->
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254508789'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1254508789%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+	</script>
 </body>
 </html>

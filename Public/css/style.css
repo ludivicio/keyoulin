@@ -47,10 +47,14 @@ body{
 	background-color: #474644;
 }
 
-.footer p {
-	color:#FF6501;
-	font-size: 20px;
+.footer p.contact {
+	/*color:#FF6501;*/
+	color: #CCCCCC;
+	font-size: 16px;
 	padding: 25px 0 15px;
+}
+.footer p.copyright {
+	color: #CCCCCC;
 }
 
 /* main page */
@@ -83,6 +87,8 @@ body{
 
 .block_2 .online-buy a {
 	display:block;
+}
+.block_2 .online-buy .taobao {
 	margin-top: 18px;
 }
 
@@ -156,7 +162,8 @@ body{
 	padding: 0 5px;
 }
 
-.buy .code {
+.buy .captcha {
+	padding-top: 0;
 	vertical-align: middle;
 }
 
