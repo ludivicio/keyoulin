@@ -89,19 +89,14 @@
 						    <div class="col-sm-6">
 						        <label class="control-label captcha">
 						        	<img title="点击刷新" src="./captcha.php" align="absbottom" onclick="this.src='captcha.php?'+ Math.random();">
-
-						      		<!-- <img id="code" src="Public/image/code.png" /> -->
 						        </label>
 						    </div>
-						    <!-- <div class="col-sm-3">
-						    	<label class="control-label"><a href="#">看不清楚，换一张</a></label>
-						    </div> -->
 						    
 						 </div>
 						
 						<div class="form-group">
 						    <div class="col-sm-offset-3 col-sm-9">
-						      	<button type="submit" class="btn btn-primary">提交</button>
+						    	<a href="javascript:void()" onclick="commit()" class="btn btn-primary">提交</a>
 						    </div>
 						</div>
 					  	
@@ -110,7 +105,44 @@
 			</div>
 		</div>	
 	</div>
-	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254508789'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1254508789%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+
+	<script type="text/javascript">
+
+		function commit(){
+
+			if($('input[name="name"]').val() == '') {
+				alert("请输入收货人姓名！");
+				return;
+			}
+			if($('input[name="phone"]').val() == '') {
+				alert("请输入收货人手机号！");
+				return;
+			}
+			if($('input[name="address"]').val() == '') {
+				alert("请输入收货人地址！");
+				return;
+			}
+			if($('input[name="code"]').val() == '') {
+				alert("请输入验证码！");
+				return;
+			}
+			
+			var params=$('input').serialize(); //序列化表单的值
+			
+			$.ajax({
+				url : "handle.php",
+				type:'post',
+				data : params,            
+				error : function(data) {
+					
+				},
+				success : function(data) {
+					var json = eval("("+data+")");
+					alert(json.msg);
+				}
+			});
+		}
+
 	</script>
 </body>
 </html>
