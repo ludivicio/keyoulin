@@ -127,7 +127,7 @@
 				return;
 			}
 			
-			var params=$('input').serialize(); //序列化表单的值
+			var params = $('form').serialize(); //序列化表单的值
 			
 			$.ajax({
 				url : "handle.php",
@@ -139,6 +139,8 @@
 				success : function(data) {
 					var json = eval("("+data+")");
 					alert(json.msg);
+
+					$('form')[0].reset();
 				}
 			});
 		}

@@ -4,6 +4,8 @@
  	 * 处理订单	
      */
 
+	if($_SERVER['REQUEST_METHOD'] != "POST") die;
+
 	session_start();
 
 	// 验证收货人
@@ -38,27 +40,50 @@
 	$name = htmlspecialchars($_POST["name"]);
 	$phone = $_POST["phone"];
 	$address = htmlspecialchars($_POST["address"]);
-
 	$qq = htmlspecialchars($_POST["qq"]);
 	$message = htmlspecialchars($_POST["message"]);
 
 	// 获取访问者IP
-	$ip = get_ip();
+	$ip = $_SERVER["REMOTE_ADDR"];
 
 	// 测试得到的数据
-	echo "name: " . $name . "<br/>" . "address: " . $address . "<br/>";
-	echo "phone: " . $phone . "<br/>" . "qq: " . $qq . "<br/>";
-	echo "message: " . $message . "<br/>";
-	echo "ip: " . $ip . "<br/>";
-
-
-	// 打开数据库
-
-	// 保存订单数据
-
-	// 响应浏览器
-
+	// echo "name: " . $name . "<br/>" . "address: " . $address . "<br/>";
+	// echo "phone: " . $phone . "<br/>" . "qq: " . $qq . "<br/>";
+	// echo "message: " . $message . "<br/>";
+	// echo "ip: " . $ip . "<br/>";
 	
+
+	// 读取数据库配置
+	$config = require('conf.php');
+
+	$db = mysql_connect($config['DB_HOST'],$config['DB_USER'],$config['DB_PWD']);
+	
+	if (!$db) {
+		echo json(array('status' => 'failed', 'msg' => '订单处理失败！'));
+		
+		die;
+	  	// die('Could not connect: ' . mysql_error());
+	} 
+
+	mysql_select_db($config['DB_NAME'], $db);
+	
+	$sql = "INSERT INTO orders (name, phone, address, ip, qq, message) VALUES ('$name','$phone', '$address','$ip','$qq','$message')";
+
+	$res = mysql_query($sql, $db);
+
+	if (!$res) {
+		echo json(array('status' => 'failed', 'msg' => '订单处理失败！'));
+
+		die;
+  		
+  		// die('Error: ' . mysql_error());
+  	} else {
+  		echo json(array('status' => 'success', 'msg' => '订单提交成功！'));
+  	}
+
+	mysql_close($db);
+
+
 	/**
 	 * 验证手机号码是否合法
 	 * @param  [type]  $str [description]
@@ -66,25 +91,6 @@
 	 */
 	function is_mobile($str){    
 		return preg_match("/^13[0-9]{1}[0-9]{8}$|15[0189]{1}[0-9]{8}$|189[0-9]{8}$/", $str);   
-	}
-
-	/**
-	 * 获取访问者的IP
-	 * @return [type] [description]
-	 */
-	function get_ip(){
-		
-		if(!empty($_SERVER["HTTP_CLIENT_IP"])){
-		  $cip = $_SERVER["HTTP_CLIENT_IP"];
-		} elseif(!empty($_SERVER["HTTP_X_FORWARDED_FOR"])){
-		  $cip = $_SERVER["HTTP_X_FORWARDED_FOR"];
-		} elseif(!empty($_SERVER["REMOTE_ADDR"])){
-		  $cip = $_SERVER["REMOTE_ADDR"];
-		} else{
-		  $cip = "无法获取！";
-		}
-
-		return $cip;
 	}
 
 	/**
