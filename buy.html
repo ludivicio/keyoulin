@@ -139,8 +139,9 @@
 				success : function(data) {
 					var json = eval("("+data+")");
 					alert(json.msg);
-
-					$('form')[0].reset();
+					if(json.status == 'success') {
+						$('form')[0].reset();
+					}
 				}
 			});
 		}
